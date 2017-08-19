@@ -131,21 +131,23 @@ $totalPages_Recordset1 = ceil($totalRows_Recordset1/$maxRows_Recordset1)-1;
   </div>
 </div>
 <div class="container" style="margin-top:15px">
-	<div class="input-group">  
-    <input type="text" class="form-control input-lg"placeholder="请输入关键字" / >  
+	<form action="show-result.php" method="get">
+  <div class="input-group">  
+    <input  name="key" id="key" type="text" class="form-control input-lg" placeholder="请输入关键字" />  
     	<span class="input-group-btn">  
         <button type="submit" class="btn btn-primary btn-lg ">查找</button>  
       </span>  
   </div>
+  </form>
   <div class="panel panel-default">
   	<div class="panel-heading">
     	<h3 class="panel-title">分类导航</h3>
   	</div>
     <!-- List group -->
   	<ul class="list-group">
-    	<li class="list-group-item">请问您是要咨询“酬金业务”问题吗？</li>
-    	<li class="list-group-item">请问您是要咨询“日常报销”问题吗？</li>
-    	<li class="list-group-item">请问您是要咨询“借款业务”问题吗？</li>
+    	<li class="list-group-item"><a href="show-result.php?key=<?php echo urlencode("酬金业务"); ?>">请问您是要咨询“酬金业务”问题吗？</a></li>
+    	<li class="list-group-item"><a href="show-result.php?key=<?php echo urlencode("日常报销"); ?>">请问您是要咨询“日常报销”问题吗？</a></li>
+    	<li class="list-group-item"><a href="show-result.php?key=<?php echo urlencode("借款业务"); ?>">请问您是要咨询“借款业务”问题吗？</a></li>
   	</ul>
 	</div>        
   <div class="panel panel-default">

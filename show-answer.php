@@ -40,6 +40,8 @@ $query_Recordset1 = sprintf("SELECT * FROM qustion_answer WHERE question_id = %s
 $Recordset1 = mysql_query($query_Recordset1, $conn) or die(mysql_error());
 $row_Recordset1 = mysql_fetch_assoc($Recordset1);
 $totalRows_Recordset1 = mysql_num_rows($Recordset1);
+$update= sprintf("UPDATE qustion_answer SET visit_time=visit_time+1 WHERE question_id = %s", GetSQLValueString($colname_Recordset1, "int"));
+$result1=mysql_query($update,$conn);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
